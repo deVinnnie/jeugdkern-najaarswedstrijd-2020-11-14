@@ -8,7 +8,7 @@ module.exports = function(grunt) {
                     pretty: true
                 },
                 files: [ {
-                  src: "slides.pug",
+                  src: "index.pug",
                   dest: "./",
                   expand: true,
                   ext: ".html"
