@@ -1,0 +1,203 @@
+@media screen{
+    @slide-width: 1920px;
+    @slide-height: 720px;
+
+    .next_time{
+        font-family: "OpenSans", "Arial", sans-serif;
+        color: #FFF;
+        background: #000;
+
+        a, p, li, figcaption{
+            font-size: 36px; /*font-size: 2.25em; /*36px*/
+        }
+
+        p, ul{
+            margin-top: 25px;
+        }
+
+        em{
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        /* Lists
+        ---------------*/
+        ul{
+            list-style-type: disc;
+            list-style-position: outside;
+        }
+
+        li{
+            margin-top: 0.5em;
+            margin-left: 1em;
+        }
+
+        /* NEXT TIME
+        ---------------*/
+        h1.nextTime{
+            font-size: 80px;
+            width: 100%;
+            font-weight: normal;
+            text-align: center;
+            font-family: "Contax", sans-serif;
+            -webkit-animation-name: glow;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-name: glow;
+            -moz-animation-duration: 6s;
+            -moz-animation-timing-function: linear;
+            -moz-animation-iteration-count: infinite;
+            animation-name: glow;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            margin-top: (@slide-height / 2px - 120px); /*120px = 2*padding ;*/
+
+            .firstLetter{
+                font-size: 100px;
+                color: inherit;
+            }
+        }
+
+        /*Glow Animation*/
+        @-webkit-keyframes glow{
+             0%{
+                color: #000;
+                text-shadow: 0 0 2px #7B002A;
+                }
+            25%{ text-shadow: 0 0 20px #BB40C0;
+                                 /*#A101A6,*/
+                                /*0 0 24px #BB40C0;*/
+                }
+            50%{
+                text-shadow: 0 0 2px #7B002A;
+            }
+            75%{
+                color: transparent;
+                text-shadow: 0 0 5px #EFEFEF,
+                            0 0 10px #EFEFEF;
+            }
+            100%{
+                color: #000;
+               text-shadow: 0 0 2px #7B002A;
+            }
+        }
+
+        @keyframes glow{
+            0%{
+                color: #000;
+                text-shadow: 0 0 2px #7E56A0;
+                }
+            25%{ text-shadow: 0 0 20px #BB40C0;
+                                 /*#A101A6,*/
+                                /*0 0 24px #BB40C0;*/
+                }
+            50%{
+                text-shadow: 0 0 2px #7E56A0;
+            }
+            75%{
+                color: transparent;
+                text-shadow: 0 0 5px #EFEFEF,
+                            0 0 10px #EFEFEF;
+            }
+            100%{
+                color: #000;
+               text-shadow: 0 0 2px #7E56A0;
+            }
+        }
+        /*End Glow Animation*/
+
+
+        @datum-color: #FFFFA3; //Yellow
+
+       /* Info
+       ---------------*/
+        .info{
+            width:100%;
+            margin-top: 163px;
+
+            h2,h3,p{
+                text-align: center;
+                font-weight: bold;
+            }
+
+            h2, h3{
+                margin-top: auto;
+                margin-bottom: 66.4px;
+                width: 100%;
+            }
+
+            h2{
+                color: @datum-color;
+                font-size: 80px; //5em
+            }
+
+            h3{
+                font-size: 72px; //4.5em;
+            }
+        }
+
+        /* Type Indicator
+        ---------------*/
+        .activiteit-type{
+            position: absolute;
+            top: 0;
+            left: 40px;
+            padding: 5px 10px;
+            font-family: QuickSand, serif;
+
+            /*MIRA_Jeugdkern*/
+            &[data-type="MIRA_Jeugdkern"]
+            {
+                color: rgba(255, 186, 186, 0.58); /*Transparent Red*/
+
+                &:after{
+                    content:"[MIRA Jeugdkern]";
+                }
+            }
+
+            /*MIRA algemeen*/
+            &[data-type="MIRA"]{
+                color: rgba(186, 200, 255, 0.58); /*Transparent Blue*/
+
+                &:after{
+                    content:"[MIRA Overkoepelend]";
+                }
+            }
+
+            /*Extern*/
+            &[data-type="Extern"]{
+                color: rgba(186, 255, 208, 0.58); /*Transparent Green*/
+
+                &:after{
+                    content:"[Extern]";
+                }
+            }
+        }
+
+        /*Overzicht*/
+        &.overzicht{
+            .datum{
+                color: @datum-color;
+            }
+
+            .list-wrapper{
+                text-align: center;
+
+                ul{
+                    list-style-type: none;
+                    list-style-position: outside;
+                    display: inline-block;
+                    margin: 0;
+                    padding: 0;
+
+                    li{
+                        text-align: left;
+
+                    }
+                }
+            }
+        }
+    }
+}

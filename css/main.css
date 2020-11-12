@@ -1,0 +1,675 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Center an element horizontally. 
+---------------*/
+.center {
+  display: block;
+  margin: 0 auto;
+}
+p.center {
+  text-align: center;
+}
+/* Move element to middle on vertical axis. 
+---------------*/
+.vertical-middle {
+  margin-top: 250px;
+}
+.float_left {
+  float: left;
+}
+.float_right {
+  float: right;
+}
+.clearfix {
+  clear: both;
+}
+/**
+* Custom Slidedeck Styling. 
+*
+* @author Vincent Ceulemans
+*
+*/
+@media screen {
+  .slide {
+    opacity: 0;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: -webkit-transform,-moz-transform,-o-transform,transform;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+  }
+  .currentSlide {
+    opacity: 1;
+  }
+  .slideDeck {
+    background: none;
+  }
+  .farPastSlide,
+  .pastSlide,
+  .futureSlide,
+  .farFutureSlide,
+  .currentSlide {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .farPasSlide,
+  .farFutureSlide,
+  .futureSlide,
+  .pastSlide {
+    display: none;
+  }
+}
+@media screen {
+  /* General
+    ---------------*/
+  body {
+    font-family: "Arial", sans-serif;
+    background: #000 url(../images/slash_it.png) repeat;
+  }
+  p,
+  li,
+  figcaption {
+    font-size: 2.25em;
+    /*36pt*/
+  }
+  p,
+  ul {
+    margin-top: 25px;
+  }
+  em {
+    font-weight: bold;
+    font-style: normal;
+  }
+  blockquote {
+    font-size: 3em;
+    margin: 10px 0 10px 50px;
+    margin-top: 6em;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
+  }
+  blockquote > footer {
+    font-size: 50%;
+  }
+  /* Headers
+    ---------------*/
+  .slide h1,
+  .slide h2 {
+    font-size: 2.75em;
+    /*44pt*/
+    width: 100%;
+    text-align: left;
+  }
+  /* Slides
+    ---------------*/
+  .slideDeck.overview {
+    background: none;
+  }
+  .slide {
+    background: #FFF;
+    background: #461a42;
+    padding: 30px 60px;
+    color: #3F3F3F;
+    color: #FFF;
+  }
+  /* Images and Figures
+    ---------------*/
+  figcaption {
+    text-align: center;
+    font-style: italic;
+  }
+  /* Lists
+    ---------------*/
+  ul {
+    list-style-position: inside;
+    list-style-type: decimal;
+  }
+  li {
+    margin-top: 0.5em;
+    margin-left: 1em;
+    color: #FFF;
+    padding: 5px;
+  }
+  li:nth-child(1) {
+    background-color: #2f6dae;
+  }
+  li:nth-child(2) {
+    background-color: #2c9ca6;
+  }
+  li:nth-child(3) {
+    background-color: #eca82c;
+  }
+  li:nth-child(4) {
+    background-color: #d4546a;
+  }
+  /* Tables
+    ---------------*/
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  th {
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    box-sizing: border-box;
+  }
+  td,
+  th {
+    padding: 1em 0.5em;
+    font-size: 25px;
+  }
+  tr td:first-child {
+    font-weight: bold;
+  }
+  /* Title_Slide
+    ---------------*/
+  #title_slide h1,
+  .title h1,
+  .ronde h1 {
+    margin-top: 200px;
+  }
+  #title_slide h1,
+  .title h1 {
+    font-size: 4em;
+  }
+  #title_slide {
+    background: url(../images/Lagoon_Nebula.jpg);
+    background-size: cover;
+  }
+  #title_slide h1,
+  #title_slide h2 {
+    color: #FFF;
+  }
+  #presentation-info {
+    margin-top: 15em;
+  }
+  #presentation-info p {
+    font-weight: bold;
+  }
+  #presentation-info ul {
+    list-style: none;
+  }
+  #presentation-info p,
+  #presentation-info ul,
+  #presentation-info li {
+    margin: 0;
+    text-align: right;
+  }
+  /*Table of Contents
+    ---------------*/
+  .table_of_contents {
+    list-style: none;
+    float: left;
+  }
+  .table_of_contents .current {
+    font-weight: bold;
+  }
+  .table_of_contents .done {
+    color: #555;
+  }
+  /*Annotations for images
+    ---------------*/
+  .slide:hover .annotation-border {
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 4px aliceblue;
+  }
+  /*Other
+    ---------------*/
+  .slide.currentSlide.vertical-center-content,
+  .slideDeck.overview .slide-wrapper .slide.vertical-center-content {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+    -webkit-box-align: center;
+    -webkit-box-orient: horizontal;
+    -moz-box-align: center;
+    -moz-box-orient: horizontal;
+    -o-box-align: center;
+    -o-box-orient: horizontal;
+    -ms-box-align: center;
+    -ms-box-orient: horizontal;
+  }
+  /* Timeline
+    ---------------*/
+  .timeline {
+    width: 100%;
+    height: 720px;
+    background: url(../images/timeline_bg.gif) repeat-y center top;
+  }
+  .timeslot p {
+    font-size: 150%;
+    margin: 5px 0;
+    padding: 5px 10px;
+  }
+  .timeslot {
+    width: 580px;
+    float: left;
+    margin: 10px 0 30px 0;
+    padding: 10px 100px 0 0;
+    border-top: 3px solid #ddd;
+    position: relative;
+  }
+  .timeslot span {
+    text-shadow: 1px 1px 2px black;
+    position: absolute;
+    right: -10px;
+    top: 27px;
+    font-size: 250%;
+    color: #F3FF69;
+  }
+  .timeslot:nth-child(even) {
+    float: right;
+    padding: 10px 0 0 100px;
+  }
+  .timeslot:nth-child(even) span {
+    left: -10px;
+  }
+  /*Quiz*/
+  .slideUp h1 {
+    transition: margin-top 0.5s ease-in-out;
+  }
+  .slideUp h1.step-done {
+    margin-top: 100px;
+  }
+  .slideUp h1.step {
+    opacity: 1;
+  }
+  .quiz {
+    width: 100%;
+    text-align: center;
+  }
+  .quiz ul {
+    display: inline-block;
+    margin: 0 auto;
+    list-style-type: upper-alpha;
+    padding: 0 auto;
+    width: auto;
+  }
+  .quiz li {
+    text-align: left;
+  }
+  img {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  ul.horizontal li {
+    float: left;
+  }
+  /*.question{
+        counter-increment: questions;
+    }
+
+    .question:before{
+        content: counter(questions);
+        border: 2px solid red;
+    }*/
+  /*.ronde{
+        /*counter-reset: questions;*/
+  /*}*/
+  .ronde h1,
+  .ronde h2 {
+    text-align: left;
+    color: #FFF;
+  }
+  .answers li:not(.correct) {
+    background: #000;
+  }
+  .answers .correct {
+    font-weight: bold;
+  }
+  .answers .slide:before {
+    font-family: FontAwesome;
+    font-size: 40px;
+    color: #008000;
+    content: "\f06e";
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  .tip:before {
+    content: "Tip: ";
+  }
+}
+@media screen {
+  .next_time {
+    font-family: "OpenSans", "Arial", sans-serif;
+    color: #FFF;
+    background: #000;
+    /* Lists
+        ---------------*/
+    /* NEXT TIME
+        ---------------*/
+    /*Glow Animation*/
+    /*End Glow Animation*/
+    /* Info
+       ---------------*/
+    /* Type Indicator
+        ---------------*/
+    /*Overzicht*/
+  }
+  .next_time a,
+  .next_time p,
+  .next_time li,
+  .next_time figcaption {
+    font-size: 36px;
+    /*font-size: 2.25em; /*36px*/
+  }
+  .next_time p,
+  .next_time ul {
+    margin-top: 25px;
+  }
+  .next_time em {
+    font-weight: bold;
+    font-style: normal;
+  }
+  .next_time ul {
+    list-style-type: disc;
+    list-style-position: outside;
+  }
+  .next_time li {
+    margin-top: 0.5em;
+    margin-left: 1em;
+  }
+  .next_time h1.nextTime {
+    font-size: 80px;
+    width: 100%;
+    font-weight: normal;
+    text-align: center;
+    font-family: "Contax", sans-serif;
+    -webkit-animation-name: glow;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: glow;
+    -moz-animation-duration: 6s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: glow;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    margin-top: 240px;
+    /*120px = 2*padding ;*/
+  }
+  .next_time h1.nextTime .firstLetter {
+    font-size: 100px;
+    color: inherit;
+  }
+  @-webkit-keyframes glow {
+    0% {
+      color: #000;
+      text-shadow: 0 0 2px #7B002A;
+    }
+    25% {
+      text-shadow: 0 0 20px #BB40C0;
+      /*#A101A6,*/
+      /*0 0 24px #BB40C0;*/
+    }
+    50% {
+      text-shadow: 0 0 2px #7B002A;
+    }
+    75% {
+      color: transparent;
+      text-shadow: 0 0 5px #EFEFEF, 0 0 10px #EFEFEF;
+    }
+    100% {
+      color: #000;
+      text-shadow: 0 0 2px #7B002A;
+    }
+  }
+  @keyframes glow {
+    0% {
+      color: #000;
+      text-shadow: 0 0 2px #7E56A0;
+    }
+    25% {
+      text-shadow: 0 0 20px #BB40C0;
+      /*#A101A6,*/
+      /*0 0 24px #BB40C0;*/
+    }
+    50% {
+      text-shadow: 0 0 2px #7E56A0;
+    }
+    75% {
+      color: transparent;
+      text-shadow: 0 0 5px #EFEFEF, 0 0 10px #EFEFEF;
+    }
+    100% {
+      color: #000;
+      text-shadow: 0 0 2px #7E56A0;
+    }
+  }
+  .next_time .info {
+    width: 100%;
+    margin-top: 163px;
+  }
+  .next_time .info h2,
+  .next_time .info h3,
+  .next_time .info p {
+    text-align: center;
+    font-weight: bold;
+  }
+  .next_time .info h2,
+  .next_time .info h3 {
+    margin-top: auto;
+    margin-bottom: 66.4px;
+    width: 100%;
+  }
+  .next_time .info h2 {
+    color: #FFFFA3;
+    font-size: 80px;
+  }
+  .next_time .info h3 {
+    font-size: 72px;
+  }
+  .next_time .activiteit-type {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    padding: 5px 10px;
+    font-family: QuickSand, serif;
+    /*MIRA_Jeugdkern*/
+    /*MIRA algemeen*/
+    /*Extern*/
+  }
+  .next_time .activiteit-type[data-type="MIRA_Jeugdkern"] {
+    color: rgba(255, 186, 186, 0.58);
+    /*Transparent Red*/
+  }
+  .next_time .activiteit-type[data-type="MIRA_Jeugdkern"]:after {
+    content: "[MIRA Jeugdkern]";
+  }
+  .next_time .activiteit-type[data-type="MIRA"] {
+    color: rgba(186, 200, 255, 0.58);
+    /*Transparent Blue*/
+  }
+  .next_time .activiteit-type[data-type="MIRA"]:after {
+    content: "[MIRA Overkoepelend]";
+  }
+  .next_time .activiteit-type[data-type="Extern"] {
+    color: rgba(186, 255, 208, 0.58);
+    /*Transparent Green*/
+  }
+  .next_time .activiteit-type[data-type="Extern"]:after {
+    content: "[Extern]";
+  }
+  .next_time.overzicht .datum {
+    color: #FFFFA3;
+  }
+  .next_time.overzicht .list-wrapper {
+    text-align: center;
+  }
+  .next_time.overzicht .list-wrapper ul {
+    list-style-type: none;
+    list-style-position: outside;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  .next_time.overzicht .list-wrapper ul li {
+    text-align: left;
+  }
+}
+/*Extra fonts
+---------------*/
+@font-face {
+  font-family: "OpenSans";
+  font-style: italic, oblique;
+  src: url(../fonts/OpenSans/OpenSans-Italic.ttf);
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url(../fonts/OpenSans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: "OpenSans";
+  font-weight: bold;
+  src: url(../fonts/OpenSans/OpenSans-Bold.ttf);
+}
+@font-face {
+  /*Doctor Who Series 7 Title Card Font.*/
+  font-family: "Contax";
+  src: url(../fonts/Contax/Contax.ttf);
+}
+@font-face {
+  font-family: "Quicksand";
+  src: url(../fonts/Quicksand/Quicksand_Book.otf);
+}
+@font-face {
+  font-family: "FontAwesome";
+  src: url(../fonts/FontAwesome/FontAwesome.otf);
+}

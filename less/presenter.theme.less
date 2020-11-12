@@ -1,0 +1,33 @@
+/**
+* Custom Slidedeck Styling. 
+*
+* @author Vincent Ceulemans
+*
+*/
+@import "lesshat.less"; 
+
+@media screen{
+    .slide{
+        opacity: 0;
+        .transition-property(transform); 
+        .transition-duration(0.5s);
+        .transition-timing-function(linear); 
+    }
+
+    .currentSlide{
+        opacity: 1; 
+    }
+    
+     .slideDeck{
+        background: none; 
+    }
+
+    .farPastSlide, .pastSlide, .futureSlide, .farFutureSlide, .currentSlide{
+         -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+
+    .farPasSlide, .farFutureSlide, .futureSlide, .pastSlide{
+        display: none;
+    }
+}

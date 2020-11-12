@@ -1,0 +1,51 @@
+doctype html
+html(lang="nl")
+    head
+        <title>Quiz 2020</title>
+        <link rel="stylesheet" type="text/css" href="css/presenter.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+        <meta charset="UTF-8">
+        <meta name="author" content="Vincent Ceulemans">
+        <meta name="robots" content="NONE">
+
+        <style id="style"></style>
+
+        <link rel="stylesheet" type="text/css" href="libs/progressjs.min.css"/>
+        <script type="text/javascript" src="libs/progress.min.js"></script>
+        <script type="text/javascript" src="libs/jquery.min.js"></script>
+        <script type="text/javascript" src="libs/underscore-min.js"></script>
+        <script type="text/javascript" src="libs/postal.min.js"></script>
+        <script type="text/javascript" src="build/presenter.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+    body
+        #splash Loading&hellip;
+
+        #help
+            p Gebruik de spatiebalk of pijltjestoetsen om te navigeren.
+
+        .slideDeck
+            section#title_slide
+                hgroup
+                    h1 MIRA Jeugdkern
+                    h2 Quiz 2020
+
+            - var counter = 0;
+            mixin question(text)
+                - counter++;
+                p.question #{counter}| #{text}
+
+            mixin open_question(text, answer)
+                - counter++;
+                p.question.open(data-answer=answer) #{counter}| #{text}
+
+            include ./00_Dummy
+            include ./01_Evolutie
+            include ./02_Einde_Wereld_en_Buitenaards_Leven
+            include ./03_Ruimtevaart_en_Planeten
+            include ./04_Klimaat_en_milieu
+            include ./05_Fysica
+            include ./06_Cryptische_Omschrijvingen
+            include ./07_Extra
+            include ./Next_Time

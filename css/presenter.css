@@ -1,0 +1,395 @@
+/**
+* Generic Slidedeck Styling. 
+*
+* @author Vincent Ceulemans
+*
+*    <div class="slideDeck">
+*       <section class="slide">
+*           ...
+*           <ul>
+*               <li class="step">Stap 1</li>
+*               <li class="step">Stap 2</li>
+*               <li class="step">Stap 3</li>
+*           </ul>
+*          ...
+*                
+*           <div class="notes">
+*           </div>
+*       </section>
+*        ...
+*   </div>
+*
+*/
+/**
+* Generic Slide Styling
+*
+* @author Vincent Ceulemans
+*
+* <section class="slide">
+*       ....
+* </section>
+* 
+*/
+@media screen {
+  .slide {
+    width: 1280px;
+    height: 720px;
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    margin: 0 auto;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    background-repeat: no-repeat;
+  }
+  .slide.transparent {
+    background: transparent;
+  }
+  /*Display videos or images in the center of the slide and make the background black.*/
+  .slide.video,
+  .slide.image,
+  .slide.center,
+  .slide.blank {
+    background: #000;
+    padding: 0;
+  }
+  .slide.video video {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .slide.image img {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .currentSlide,
+  .pastSlide,
+  .farPastSlide,
+  .futureSlide,
+  .farFutureSlide {
+    display: block;
+  }
+}
+@media print {
+  .slide {
+    border: 0.2em solid black;
+    background: none;
+    min-height: 100vh;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+/**
+* Styling for ticker. 
+*
+* @author Vincent Ceulemans
+*
+* <div id="ticker">
+*     <ul id="ticks">
+*         <li><span class="tick"></span></li>
+*         <li><span class="tick"></span></li>
+*         <li><span class="tick"></span></li>
+*     </ul>
+* </div>
+*
+*/
+@media screen {
+  #ticker {
+    position: fixed;
+    display: block;
+    bottom: 10px;
+    z-index: 100;
+  }
+  #ticker ul {
+    list-style: none;
+  }
+  #ticker.left {
+    right: auto;
+    left: 0;
+  }
+  #ticker.right {
+    left: auto;
+    right: 50px;
+  }
+  #ticker .tick {
+    display: block;
+    background: #A70B37;
+    height: 10px;
+    width: 10px;
+  }
+  #ticker.large .tick {
+    width: 40px;
+    height: 40px;
+  }
+}
+/**
+* Curtain: conceals the slide contents. 
+*
+* @author Vincent Ceulemans
+*
+* Curtain open: 
+* <div id="curtain"></div>
+*
+* Curtain closed: 
+* <div id="curtain" class="closed"></div>
+*/
+@media screen {
+  #curtain {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+    z-index: -10;
+    opacity: 0;
+  }
+  #curtain.closed {
+    z-index: 20;
+    opacity: 1.0;
+  }
+}
+/**
+* Presentation Notes styling
+*
+* @author Vincent Ceulemans
+*
+*
+* <section class="slide">
+*       <div class="notes">
+* </section>
+*
+* <div id="notes-display">
+*
+* </div>
+*
+*/
+@media screen {
+  .notes {
+    display: none;
+  }
+  #notes-display {
+    color: #FFF;
+    font-size: 75%;
+    position: fixed;
+    bottom: -55%;
+    height: 55%;
+    width: 98%;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.7);
+    -webkit-transition: bottom 0.3s ease-in;
+    -moz-transition: bottom 0.3s ease-in;
+    -o-transition: bottom 0.3s ease-in;
+    transition: bottom 0.3s ease-in;
+    padding: 0 1em;
+    overflow-y: scroll;
+    cursor: auto;
+  }
+  #notes-display ul {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  #notes-display.visible {
+    bottom: 0;
+  }
+}
+@media print {
+  .notes {
+    color: #757575;
+  }
+  #notes-display {
+    display: none;
+  }
+}
+/**
+* Overview mode with thumbnails of each slide
+*
+* @author Vincent Ceulemans
+*
+*/
+@media screen {
+  .slideDeck.overview {
+    padding: 1em;
+  }
+  .slideDeck.overview .slide-wrapper {
+    float: left;
+    margin-left: 10px;
+    margin-top: 20px;
+    display: block;
+  }
+  .slideDeck.overview .slide-wrapper .slide {
+    position: relative;
+    display: block;
+    opacity: 1;
+    left: 0;
+    top: 0;
+    border: 1.5em solid transparent;
+    border-radius: 15px;
+  }
+  .slideDeck.overview .slide-wrapper .slide:hover {
+    border-color: #EFEFEF;
+    box-shadow: 0 0 100px #FFF;
+  }
+  .slideDeck.overview .slide-wrapper .slide:after {
+    counter-increment: slideCounter;
+    content: counter(slideCounter);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.20em;
+    background-color: rgba(0, 0, 0, 0.2);
+    /*Set text*/
+    font-size: 10em;
+    font-family: "Arial";
+    color: #FFF;
+    text-shadow: 0 5px 5px #FFF;
+  }
+  .slideDeck.overview .slide-wrapper.current .slide {
+    border-color: #00FF00;
+    box-shadow: 0 0 100px #0F0;
+  }
+  .slideDeck.overview ~ #ticker {
+    display: none;
+  }
+}
+/**
+* Styling for master mode. 
+*
+* @author Vincent Ceulemans
+*
+*/
+@media screen {
+  .master {
+    /* Always show the notes-display.*/
+    /*Place currrentSlide on the lefthand side of the viewscreen*/
+    /*Place next Slide on the righthand side of the viewscreen); */
+    /* Make upcoming steps translucent instead of hidden. */
+  }
+  .master #notes-display {
+    bottom: 0;
+    height: 50%;
+  }
+  .master .pastSlide,
+  .master .farPastSlide,
+  .master .farFutureSlide {
+    display: none;
+  }
+  .master .currentSlide,
+  .master .futureSlide {
+    display: block;
+  }
+  .master .currentSlide {
+    border: 3px solid #51A9EE;
+    box-shadow: 0 0 30px #51A9EE;
+    -webkit-transform: scale(0.5) translate3d(0, 0, 0);
+    transform: scale(0.5) translate3d(0, 0, 0);
+    opacity: 1;
+    transition: none;
+    -webkit-transition: none;
+    left: 30px;
+  }
+  .master .futureSlide {
+    -webkit-transform: scale(0.5) translate3d(1300px, 0, 0);
+    transform: scale(0.5) translate3d(1300px, 0, 0);
+    opacity: 1;
+    transition: none;
+    -webkit-transition: none;
+    left: 0;
+    right: 30px;
+  }
+  .master .step {
+    opacity: 0.5;
+    color: #EEE;
+  }
+}
+@media screen {
+  /* General
+    ---------------*/
+  html,
+  body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  html {
+    overflow: hidden;
+  }
+  body {
+    cursor: none;
+    font-size: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    counter-reset: slideCounter;
+  }
+  .cursor-visible {
+    cursor: auto;
+  }
+  .slideDeck {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+  /* Transitioning between steps.  
+    ---------------*/
+  .step {
+    opacity: 0;
+  }
+  .step,
+  .step-done {
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+  }
+  /* Splashscreen
+    ---------------*/
+  #splash {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 500px;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #000;
+    color: #FFF;
+    font-size: 40px;
+    text-align: center;
+  }
+  /* Helpscreen
+    ---------------*/
+  #help {
+    position: fixed;
+    width: 100%;
+    top: 50px;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+  }
+}
+@media print {
+  * {
+    color: #000;
+  }
+  .slide {
+    /*width: 90%;
+        height: 90%;*/
+  }
+}

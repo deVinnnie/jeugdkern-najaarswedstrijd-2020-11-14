@@ -1,0 +1,328 @@
+@media screen{
+    /* General
+    ---------------*/
+    body{
+        font-family: "Arial", sans-serif;
+        background: #000 url(../images/slash_it.png) repeat;
+    }
+
+    p, li, figcaption{
+        font-size: 2.25em; /*36pt*/
+    }
+
+    p, ul{
+        margin-top: 25px;
+    }
+
+    em{
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    blockquote{
+        font-size: 3em;
+        margin: 10px 0 10px 50px;
+        margin-top: 6em;
+        padding-left: 15px;
+        border-left: 3px solid #ccc;
+    }
+
+    blockquote>footer{
+        font-size: 50%;
+    }
+
+    /* Headers
+    ---------------*/
+    .slide h1, .slide h2{
+        font-size: 2.75em; /*44pt*/
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Slides
+    ---------------*/
+    .slideDeck.overview{
+        background: none;
+    }
+
+    .slide{
+        background: #FFF;
+        background: #461a42;
+        padding: 30px 60px;
+        color: #3F3F3F;
+        color: #FFF;
+    }
+
+    /* Images and Figures
+    ---------------*/
+    figcaption{
+        text-align: center;
+        font-style: italic;
+    }
+
+    /* Lists
+    ---------------*/
+    ul{
+        list-style-position: inside;
+        list-style-type: decimal;
+    }
+
+    li{
+        margin-top: 0.5em;
+        margin-left: 1em;
+        color: #FFF;
+        padding: 5px;
+    }
+
+    li:nth-child(1) {
+        background-color: #2f6dae;
+    }
+
+    li:nth-child(2) {
+        background-color: #2c9ca6;
+    }
+
+    li:nth-child(3) {
+        background-color: #eca82c;
+    }
+
+    li:nth-child(4) {
+        background-color: #d4546a;
+    }
+
+
+    /* Tables
+    ---------------*/
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    th{
+        text-align: left;
+        border-bottom: 2px solid #ddd;
+        box-sizing: border-box;
+    }
+
+    td, th{
+        padding: 1em 0.5em;
+        font-size: 25px;
+    }
+
+    tr td:first-child{
+        font-weight: bold;
+    }
+
+    /* Title_Slide
+    ---------------*/
+    #title_slide h1,
+    .title h1,
+    .ronde h1{
+        margin-top: 200px;
+    }
+
+    #title_slide h1,
+    .title h1{
+        font-size: 4em;
+    }
+
+    #title_slide{
+        background: url(../images/Lagoon_Nebula.jpg);
+        background-size: cover;
+
+        h1,h2{
+            color: #FFF;
+        }
+
+    }
+
+    #presentation-info{
+        margin-top: 15em;
+
+        p{
+            font-weight: bold
+
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        p, ul,li{
+            margin: 0;
+            text-align: right;
+        }
+    }
+
+    /*Table of Contents
+    ---------------*/
+    .table_of_contents{
+        list-style: none;
+        float: left;
+    }
+
+    .table_of_contents .current{
+        font-weight: bold;
+    }
+
+    .table_of_contents .done{
+        color: #555;
+    }
+
+    /*Annotations for images
+    ---------------*/
+    .slide:hover .annotation-border{
+        border-color: rgba(255,255,255,0.9);
+        box-shadow: 0 0 4px aliceblue;
+    }
+
+    /*Other
+    ---------------*/
+    .slide.currentSlide.vertical-center-content,
+    .slideDeck.overview .slide-wrapper .slide.vertical-center-content{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -o-box;
+        display: -ms-box;
+        -webkit-box-align: center;
+        -webkit-box-orient:horizontal;
+        -moz-box-align: center;
+        -moz-box-orient:horizontal;
+        -o-box-align: center;
+        -o-box-orient:horizontal;
+        -ms-box-align: center;
+        -ms-box-orient:horizontal;
+    }
+
+    /* Timeline
+    ---------------*/
+    .timeline{
+        width: 100%;
+        height: 720px;
+        background: url(../images/timeline_bg.gif) repeat-y center top;
+    }
+
+    .timeslot p {
+        font-size: 150%;
+        margin: 5px 0;
+        padding: 5px 10px;
+    }
+
+    .timeslot {
+        width: 580px;
+        float: left;
+        margin: 10px 0 30px 0;
+        padding: 10px 100px 0 0;
+        border-top: 3px solid #ddd;
+        position: relative;
+    }
+
+    .timeslot span {
+        text-shadow: 1px 1px 2px black;
+        position: absolute;
+        right: -10px;
+        top: 27px;
+        font-size: 250%;
+        color: #F3FF69;
+    }
+
+    .timeslot:nth-child(even) {
+        float: right;
+        padding: 10px 0 0 100px;
+    }
+
+    .timeslot:nth-child(even) span{
+        left: -10px;
+    }
+
+    /*Quiz*/
+    .slideUp h1{
+        transition: margin-top 0.5s ease-in-out;
+    }
+
+    .slideUp h1.step-done{
+        margin-top: 100px;
+    }
+
+    .slideUp h1.step{
+        opacity: 1;
+    }
+
+    .quiz{
+        width: 100%;
+        text-align: center;
+
+        ul{
+            display: inline-block;
+            margin: 0 auto;
+            list-style-type: upper-alpha;
+            padding: 0 auto;
+            width: auto;
+        }
+
+        li{
+            text-align:left;
+        }
+    }
+
+    img{
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    ul.horizontal{
+        li{
+            float: left;
+        }
+    }
+
+    /*.question{
+        counter-increment: questions;
+    }
+
+    .question:before{
+        content: counter(questions);
+        border: 2px solid red;
+    }*/
+
+    /*.ronde{
+        /*counter-reset: questions;*/
+    /*}*/
+
+    .ronde{
+        h1, h2{
+            text-align: left;
+            color: #FFF;
+        }
+    }
+
+    .answers{
+        li:not(.correct){
+            background: #000;
+        }
+
+        .correct{
+            //background: #000;
+            font-weight: bold;
+        }
+
+        .slide:before{
+            font-family: FontAwesome;
+            font-size: 40px;
+            color: #008000;
+            content: "\f06e";
+            position: absolute;
+            top: 10px;
+            right: 20px;
+
+
+        }
+    }
+
+
+
+    .tip:before{
+        content: "Tip: ";
+    }
+}
