@@ -74,19 +74,19 @@
         padding: 5px;
     }
 
-    li:nth-child(1) {
+    ul li:nth-child(1) {
         background-color: #2f6dae;
     }
 
-    li:nth-child(2) {
+    ul li:nth-child(2) {
         background-color: #2c9ca6;
     }
 
-    li:nth-child(3) {
+    ul li:nth-child(3) {
         background-color: #eca82c;
     }
 
-    li:nth-child(4) {
+    ul li:nth-child(4) {
         background-color: #d4546a;
     }
 
@@ -298,7 +298,7 @@
     }
 
     .answers{
-        li:not(.correct){
+        ul li:not(.correct){
             background: #000;
         }
 
@@ -324,5 +324,27 @@
 
     .tip:before{
         content: "Tip: ";
+    }
+
+    .scores h1 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        text-align: center;
+    }
+
+    .scores table{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        width: 50%;
+        background-color: rgba(0, 0, 0, 0.7);
+
+        td {
+            padding: 0.5em;
+        }
+        td:last-child{
+            text-align: right;
+        }
     }
 }

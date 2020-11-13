@@ -4,8 +4,11 @@ module.exports = function(grunt) {
         pug: {
             compile: {
                 options: {
-                    client: false,
-                    pretty: true
+                  client: false,
+                  pretty: true,
+                  data: function(dest, src) {
+                    return require('./game.json');
+                  }
                 },
                 files: [ {
                   src: "index.pug",
