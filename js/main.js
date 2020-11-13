@@ -45,15 +45,27 @@ window.onload = function()
   // );
 
   // console.log(csv);
-
     $(document).on("keydown", handleKey);
 
-    function handleKey(event){
+    showingAnswers = false;
+  function handleKey(event){
+    console.log("handle");
+    console.log(showingAnswers);
         if(event.keyCode == 72){ //h
-            $(".slideDeck").toggleClass("answers");
-        }
-    }
+          $(".slideDeck").toggleClass("answers");
 
+          if(showingAnswers){
+            showingAnswers = false;
+            Presenter.keyboard.enable();
+            Presenter.mouse.enable();
+          }
+          else {
+            showingAnswers = true;
+            Presenter.keyboard.disable();
+            Presenter.mouse.disable();
+          }
+        }
+  }
     setTimeout(function(){
         //Hide help after 6 seconds.
         $("#help").fadeOut();

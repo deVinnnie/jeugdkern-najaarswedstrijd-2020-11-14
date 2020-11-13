@@ -809,20 +809,26 @@ Presenter.Navigator.register("show_notes",
         if (window.addEventListener) {    // all browsers except IE before version 9
             // Internet Explorer, Opera, Google Chrome and Safari
             document.querySelector(".slideDeck").addEventListener("mousewheel",
-                function(e){
-                    Mouse.scrollHandler(e.wheelDelta);
-                },
-            false);
+                                                                  this.handleMouseWheel,
+                                                                  false);
             
             // Firefox
             // Scroll information is stored in e.detail. Is '3' for scrollDown and '-3' for scrollUp. 
             document.querySelector(".slideDeck").addEventListener("DOMMouseScroll",
-                function(e){
-                    Mouse.scrollHandler(-e.detail);  
-                },
-            false);
+                                                                  this.handleDOMMouseScroll,
+                                                                  false);
         }
     };
+
+    Mouse.prototype.handleMouseWheel = function(e){
+        console.debug("mousewheel");
+        Mouse.scrollHandler(e.wheelDelta);
+    }
+
+    Mouse.prototype.handleDOMMouseScroll = function(e){
+        console.debug("DOMMouseScroll");
+        Mouse.scrollHandler(-e.detail);
+    }
 
     /**
      * @param wheelData Negative number on scrollUp, positive number on scrollDown. 
@@ -841,9 +847,9 @@ Presenter.Navigator.register("show_notes",
 
     Mouse.prototype.disable = function()
     {
-        console.log("[Mouse] Disabled"); 
-        document.querySelector(".slideDeck").removeEventListener("mousewheel", Mouse.scrollHandler);
-        document.querySelector(".slideDeck").removeEventListener("DOMMouseScroll",  Mouse.scrollHandler);
+        console.log("[Mouse] Disabled");
+        document.querySelector(".slideDeck").removeEventListener("mousewheel", this.handleMouseWheel);
+        document.querySelector(".slideDeck").removeEventListener("DOMMouseScroll",  this.handleDOMMouseScroll);
     };
 
     //Make constructor visible in global space. 
