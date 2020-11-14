@@ -66,8 +66,8 @@ window.onload = function()
           }
         }
   }
-    setTimeout(function(){
-        //Hide help after 6 seconds.
-        $("#help").fadeOut();
-    },6000);
+    // setTimeout(function(){
+    //     //Hide help after 6 seconds.
+    //     $("#help").fadeOut();
+    // },6000);
 };
